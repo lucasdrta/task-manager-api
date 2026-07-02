@@ -1,0 +1,46 @@
+@baseUrl = http://localhost:3333
+@taskId = 1
+
+### Health check
+GET {{baseUrl}}/health
+
+###
+
+### List tasks
+GET {{baseUrl}}/tasks
+
+###
+
+### Create task
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Buy milk",
+  "description": "2L"
+}
+
+###
+
+### Mark task as completed
+PATCH {{baseUrl}}/tasks/{{taskId}}/status
+Content-Type: application/json
+
+{
+  "completed": true
+}
+
+###
+
+### Mark task as pending
+PATCH {{baseUrl}}/tasks/{{taskId}}/status
+Content-Type: application/json
+
+{
+  "completed": false
+}
+
+###
+
+### Delete task
+DELETE {{baseUrl}}/tasks/{{taskId}}
