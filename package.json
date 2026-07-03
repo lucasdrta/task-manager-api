@@ -12,6 +12,7 @@
     "test:watch": "vitest",
     "docker:up": "docker compose up -d --build",
     "docker:down": "docker compose down",
+    "docker:reset": "docker compose down && docker volume rm api_api_node_modules 2>/dev/null || true",
     "docker:dev": "docker compose up --build",
     "docker:logs": "docker compose logs -f api",
     "db:generate": "drizzle-kit generate",
@@ -20,6 +21,7 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "@scalar/express-api-reference": "^0.10.8",
     "dotenv": "^17.4.2",
     "drizzle-orm": "^0.45.2",
     "express": "^5.2.1",

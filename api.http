@@ -1,6 +1,8 @@
 @baseUrl = http://localhost:3333
 @taskId = 1
 
+# Docs: {{baseUrl}}/docs
+
 ### Health check
 GET {{baseUrl}}/health
 
